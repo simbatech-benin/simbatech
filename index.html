@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simba Tech</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">  
+    <style>
+      h3{
+        text-align: center
+      }
+      /* Services Section */
+
+.services {
+
+    padding: 5rem 0;
+}
+
+.services .box {
+    background: white;
+    border-radius: 0.4rem !important;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid #e2e8f0;
+}
+
+.services .box:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.services .box i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    
+}
+
+.services .box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 5rem 0;
+    background: var(--section-color);
+}
+
+.pricing .box {
+    background: white;
+    border-radius: .4rem !important;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing .box.popular {
+    border: 2px solid var(--main-color);
+}
+
+.pricing .box .titel {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.pricing .box .price span:first-child {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.pricing .box a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--main-color);
+    color: white !important;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.pricing .box a:hover {
+    background: var(--main-color-alt);
+
+}
+
+.item{
+  
+  margin: 0px !important;
+  margin-top: 10px !important;
+  background-image: url("img/2.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+.item h1, .item p{
+  color:white !important;
+}
+    </style>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9ff;
+        }
+
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            width: 100%;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            animation-duration: 0.8s;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .slide {
+                flex-direction: row !important;
+                align-items: center;
+                gap: 40px;
+            }
+        }
+
+        .slide-image {
+            flex: 1;
+            min-width: 280px;
+            margin-bottom: 20px;
+        }
+
+        .slide-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-content {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .about-tag {
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .slide-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #6366f1;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: #6366f1;
+            transform: scale(1.2);
+        }
+
+        .dotted-bg {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            background-image: radial-gradient(#ddd 2px, transparent 2px);
+            background-size: 15px 15px;
+            z-index: -1;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation-name: fadeIn;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+    <style>
+      /* Animation Base Styles */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Apply animations to specific elements */
+
+/* Header animation */
+.header {
+  animation: slideInFromTop 0.8s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Logo animation */
+.logo {
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Nav menu items animation */
+.main-nav > li {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.main-nav > li:nth-child(1) { animation-delay: 0.2s; }
+.main-nav > li:nth-child(2) { animation-delay: 0.4s; }
+.main-nav > li:nth-child(3) { animation-delay: 0.6s; }
+.main-nav > li:nth-child(4) { animation-delay: 0.8s; }
+
+/* Hero section animations */
+.hero-content h1 {
+  opacity: 0;
+  animation: slideInFromLeft 1s ease-out 0.5s forwards;
+}
+
+.hero-content p {
+  opacity: 0;
+  animation: slideInFromLeft 1s ease-out 0.8s forwards;
+}
+
+.hero-content .cta-button {
+  opacity: 0;
+  animation: scaleUp 1s ease-out 1.2s forwards;
+}
+
+/* Scroll button animation */
+#scroll-up {
+  animation: pulse 2s infinite;
+}
+
+/* Landing slider animation */
+.landing .item {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.landing .text h1 {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideInFromBottom 0.8s ease-out 0.3s forwards;
+}
+
+.landing .text p {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideInFromBottom 0.8s ease-out 0.6s forwards;
+}
+
+/* Gallery animations */
+.gallery .box {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s ease-out;
+}
+
+.gallery .box.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery .box .image {
+  overflow: hidden;
+}
+
+.gallery .box .image img {
+  transition: transform 0.5s ease;
+}
+
+.gallery .box:hover .image img {
+  transform: scale(1.1);
+}
+
+/* Services animations */
+.services .box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.services .box.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services .box i {
+  animation: pulse 2s infinite;
+}
+
+/* Features animations */
+.feature-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.feature-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-card i {
+  animation: bounce 2s infinite;
+}
+
+/* Stats counter animations */
+.stat-box {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s ease-out;
+}
+
+.stat-box.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.counter {
+  position: relative;
+}
+
+/* Pricing animations */
+.pricing .box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.pricing .box.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing .box.popular::before {
+  content: 'Popular';
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: var(--main-color);
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  animation: pulse 2s infinite;
+}
+
+.pricing .box .price span:first-child {
+  animation: pulse 3s infinite;
+}
+
+/* Testimonial animations */
+.testimonial-slider .testimonial-slide {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.testimonial-img {
+  animation: scaleUp 0.8s ease-out;
+}
+
+/* Contact form animations */
+.contact-form {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInFromBottom 1s ease-out forwards;
+}
+
+.contact-form .form-group {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.contact-form .form-group:nth-child(1) { animation-delay: 0.2s; }
+.contact-form .form-group:nth-child(2) { animation-delay: 0.4s; }
+.contact-form .form-group:nth-child(3) { animation-delay: 0.6s; }
+.contact-form .form-group:nth-child(4) { animation-delay: 0.8s; }
+.contact-form .form-group:nth-child(5) { animation-delay: 1s; }
+
+.submit-btn {
+  opacity: 0;
+  animation: scaleUp 0.5s ease-out 1.2s forwards;
+}
+
+/* Footer animations */
+.footer .list-item {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.footer .list {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInFromBottom 0.5s ease-out forwards;
+}
+
+.footer .list:nth-child(1) { animation-delay: 0.2s; }
+.footer .list:nth-child(2) { animation-delay: 0.4s; }
+.footer .list:nth-child(3) { animation-delay: 0.6s; }
+.footer .list:nth-child(4) { animation-delay: 0.8s; }
+
+.footer .media li {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.footer .media li:nth-child(1) { animation-delay: 0.2s; }
+.footer .media li:nth-child(2) { animation-delay: 0.4s; }
+.footer .media li:nth-child(3) { animation-delay: 0.6s; }
+.footer .media li:nth-child(4) { animation-delay: 0.8s; }
+
+/* Button hover animations */
+.cta-button, .pricing .box a, .submit-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover, .pricing .box a:hover, .submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button::before, .pricing .box a::before, .submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.5s ease;
+}
+
+.cta-button:hover::before, .pricing .box a:hover::before, .submit-btn:hover::before {
+  left: 100%;
+}
+
+/* Main title animation */
+.main-title {
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.main-itle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background: var(--main-color);
+  transform: translateX(-50%);
+  animation: expandWidth 1s ease-out 0.5s forwards;
+}
+
+@keyframes expandWidth {
+  0% { width: 0; }
+  100% { width: 80px; }
+}
+
+/* Count up animation for stats */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated background for CTA sections */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  animation: moveBackground 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Add this to your main CSS file */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #777;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #0d8aee;
+}
+
+#course-input {
+  background-color: #f7f7f7;
+}
+    </style>
+</head>
+<body>
+    <!-- Start Header -->
+    <div class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo">Simba Tech</a>
+            <ul class="main-nav">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#services">Offerings</a></li>
+                                <li><a href="#pricing">Courses</a></li>
+
+                <!-- Start MegMenu -->
+                <div class="mega-menu">
+                    <div class="image">
+                        <img src="img/IMG-20250209-WA0001.jpg" alt="megmenu-image">
+                    </div>
+                    <ul class="links">
+                        <li>
+                          <a href="#services"><i class="far fa-building fa-fw"></i> Services</a>
+                        </li>
+                        <li>
+                          <a href="#our-skills"><i class="far fa-check-circle fa-fw"></i> Our Skills</a>
+                        </li>
+                        <li>
+                          <a href="#faqs"><i class="fa-regular fa-circle-question"></i>FAQs</a>
+                        </li>
+                      </ul>
+                      <ul class="links">
+                        <li>
+                          <a href="#events"><i class="far fa-calendar-alt fa-fw"></i> Events</a>
+                        </li>
+                        <li>
+                          <a href="#pricing"><i class="fas fa-server fa-fw"></i> Pricing Plans</a>
+                        </li>
+                        <li>
+                          <a href="#discount"><i class="fas fa-percent fa-fw"></i> Request A Discount</a>
+                        </li>
+                      </ul>
+                </div>
+
+                <!-- End MegMenu -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Header -->
+    
+    <!-- Add after header -->
+<section class="hero-section">
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="t.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-content">
+    <h1>Welcome to Simba Tech</h1>
+    <p>Empowering Africa's Digital Future</p>
+    <a href="#services" class="cta-button">Explore Our Services</a>
+  </div>
+</section>
+
+    <button id="scroll-up" onclick="topScroll()"> <i class="fa-solid fa-angles-up"></i></button>
+    
+    
+    
+        <section class="about-section">
+        <div class="slider-container">
+            <div class="dotted-bg"></div>
+            
+            <!-- Slide 1 -->
+            <div class="slide fade-in active">
+                <div class="slide-image">
+                    <img src="img/1.jpg" alt="E-learning expert using laptop">
+                </div>
+                <div class="slide-content">
+                    <div class="about-tag">ABOUT</div>
+                    <h2 class="slide-title">We Are Experts in E-learning</h2>
+                    <p class="slide-description">
+                   The SIMBA Technology Incubation Center, also known as Simba Tech, is a community-driven platform dedicated to promoting technological innovation, education, and entrepreneurship. Our mission is to empower individuals with the skills and knowledge needed to succeed in the tech industry.
+<br>
+The CEO of SIMBA Technology is OKUNGBOWA PETER ODION & OKUNGBOWA PAUL OVBOKHAN . Mr. PETER and PAUL has been involved in the education sector for over 20 years and has successfully built the largest lecture center for students throughout Benin City, as well as a well-recognized secondary school and a primary/nursery school in Benin City, Edo State, Nigeria. 
+<br>
+Recognizing the significance and potential of technology, Mr. Paul felt it was essential to establish this technology incubation center.
+                    </p>
+                    <a href="#" class="explore-btn">Explore</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide fade-in">
+                <div class="slide-image">
+                    <img src="img/2.jpg" alt="Students collaborating online">
+                </div>
+                <div class="slide-content">
+                    <div class="about-tag">OUR MISSION</div>
+                    <h2 class="slide-title">Transforming Education Worldwide</h2>
+                    <p class="slide-description">
+                        At SIMBA Tech, our mission is to empower individuals and communities with the skills, knowledge, and resources needed to thrive in the digital age. We strive to create a vibrant ecosystem that fosters innovation, creativity, and entrepreneurship, driving positive impact and transformation in Africa and beyond.
+                    </p>
+                    <a href="#" class="explore-btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide fade-in">
+                <div class="slide-image">
+                    <img src="img/3.jpg" alt="Modern learning technology">
+                </div>
+                <div class="slide-content">
+                    <div class="about-tag">OUR VISION</div>
+                    <h2 class="slide-title">Innovation Meets Pedagogy</h2>
+                    <p class="slide-description">
+                        Our vision at SIMBA Tech is to become a leading hub for tech innovation and talent development in Africa, bridging the gap between education, employment, and entrepreneurship. We envision a future where everyone has access to the skills, tools, and opportunities needed to succeed in the tech industry, driving economic growth, social progress, and digital inclusion.
+                    </p>
+                    <a href="#" class="explore-btn">Our Methods</a>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+      <!-- Start gallery -->
+       <div class="gallery" id="gallery">
+        <h2 class="main-title">Gallery</h2>
+        <div class="container">
+          <div class="box">
+            <div class="image">
+            <img src="img/IMG-20250220-WA0053.jpg" alt="">
+            </div>
+          </div>
+          <div class="box">
+            <div class="image">
+              <img src="img/IMG-20250209-WA0003.jpg" alt="">
+            </div>
+          </div>
+          <div class="box">
+            <div class="image">
+              <img src="img/IMG-20250209-WA0004.jpg" alt="">
+              </div>
+          </div>
+          <div class="box">
+            <div class="image">
+              <img src="img/IMG-20250209-WA0005.jpg" alt="">
+              </div>
+          </div>
+          <div class="box">
+            <div class="image">
+              <img src="img/IMG-20250209-WA0006.jpg" alt="">
+              </div>
+          </div>
+          <div class="box">
+            <div class="image">
+              <img src="img/IMG-20250209-WA0002.jpg" alt="">
+              </div>
+          </div>
+ <div class="box">
+            <div class="image">
+              <img src="img/22.jpg" alt="">
+              </div>
+          </div>
+        </div>
+       </div>
+      <!-- End gallery -->
+
+         <!-- Start services -->
+          <div class="services" id="services">
+            <h2 class="main-title">Our Offerings</h2>
+            <div class="container">
+              <div class="box">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Workstation</h3>
+                <div class="info">
+                 <!-- <a href="#">Details</a>-->
+                </div>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Tech Skill Training/Development</h3>
+                <div class="info">
+
+                </div>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-chart-column"></i>
+                <h3>Smart Homes/Solar Installation</h3>
+                <div class="info">
+
+                </div>
+              </div>
+              <div class="box">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Computer Repair training</h3>
+                <div class="info">
+                  
+                </div>
+              </div>
+
+            </div>
+          </div>
+         <!-- End services -->
+         
+                   <!-- start pricing -->
+              <div class="pricing" id="pricing">
+                <div class="dots dots-up"></div>
+                <div class="dots dots-down"></div>
+                <h2 class="main-title">Courses</h2>
+                <div class="container">
+                  <div class="box">
+                    <div class="titel">Graphic Design</div>
+                    <img src="img/-basic.png" alt="">
+                    <div class="price">
+                      <span>₦70000</span>
+                      <span>4 Months</span>
+                    </div>
+                    <ul>
+                      <li>
+                        <i class="fa-solid fa-check"></i>
+                        Full Payment/Installmental
+                      </li>
+
+                    </ul>
+                    <a href="#contact">Choose</a>
+                  </div>
+                  
+                  
+                  <div class="box popular">
+
+                    <div class="titel">Data Annotation</div>
+                    <img src="img/hosting-.png" alt="">
+                    <div class="price">
+                      <span>₦50000</span>
+                      <span>2 Months</span>
+                    </div>
+                    <ul>
+                      <li>
+                                              <i class="fa-solid fa-check"></i>
+                                              Full Payment
+                                            </li>
+                    </ul>
+                    <a href="#">Choose </a>
+                  </div>
+                  
+                  <div class="box">
+                    <div class="titel">Online Survey</div>
+                    <img src="img/hosting-.png" alt="">
+                    <div class="price">
+                      <span>₦7000</span>
+                      <span>1 Month</span>
+                    </div>
+                    <ul>
+                      <li>
+                                              <i class="fa-solid fa-check"></i>
+                                              Full Payment
+                                            </li>
+                    </ul>
+                    <a href="#contact">Choose</a>
+                  </div>
+
+              
+                                <div class="box">
+
+                    <div class="titel">Computer Appreciation</div>
+
+                    <img src="img/hosting-.png" alt="">
+                    <div class="price">
+                      <span>₦50000</span>
+                      <span>4 Months</span>
+                    </div>
+                    <ul>
+                      <li>
+                                              <i class="fa-solid fa-check"></i>
+                                              Full Payment/Installmental
+                                            </li>
+                    </ul>
+                    <a href="#contact">Choose</a>
+                  </div>
+     
+              
+              
+              
+              
+              
+                   
+                  <div class="box">
+                    <div class="titel">Software Engineering</div>
+                    <img src="img/hosting-.png" alt="">
+                    <div class="price">
+                      <span>₦100000</span>
+                      <span>4 Months</span>
+                    </div>
+                    <ul>
+                      <li>
+                                              <i class="fa-solid fa-check"></i>
+                                              Full Payment/Installmental
+                                            </li>
+                    </ul>
+                    <a href="#contact">Choose</a>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                   <div class="box">
+                     <div class="titel">Digital Marketing</div>
+                     <img src="img/hosting-.png" alt="">
+                     <div class="price">
+                       <span>₦70000</span>
+                       <span>2 Months</span>
+                     </div>
+                     <ul>
+                       <li>
+                         <i class="fa-solid fa-check"></i>
+                         Full Payment/Installmental
+                       </li>
+                     </ul>
+                     <a href="#contact">Choose</a>
+                   </div>
+                   
+                   
+                                     
+
+                   <div class="box">
+
+                     <div class="titel">Solar/Smart home installation</div>
+                     <img src="img/hosting-.png" alt="">
+                     <div class="price">
+                       <span>Join Group For More Info</span>
+
+                     </div>
+                     <ul>
+
+
+                     </ul>
+                     <a href="https://chat.whatsapp.com/F5V0QId4C3W5ndaymQDP6H">Join</a>
+                   </div>
+                   
+                   
+                   
+                   
+                   
+                </div>
+              </div>
+              
+              
+              
+              
+             <!-- End pricing -->
+   
+            <!-- Add before pricing section -->
+            <section class="features" id="features">
+              <div class="container">
+                <h2 class="main-title">Why Choose Us</h2>
+                <div class="features-grid">
+                  <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals with years of experience</p>
+                  </div>
+                  <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Learning</h3>
+                    <p>Study at your own pace with our flexible schedule options</p>
+                  </div>
+                  <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Join our vibrant community of learners and professionals</p>
+                  </div>
+                  <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certification</h3>
+                    <p>Earn industry-recognized certificates upon completion</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+         <!-- Add after services section -->
+         <section class="stats-counter" id="stats">
+           <div class="container">
+             <div class="stats-grid">
+               <div class="stat-box">
+                 <i class="fas fa-users"></i>
+                 <h3 class="counter">500+</h3>
+                 <p>Students Trained</p>
+               </div>
+               <div class="stat-box">
+                 <i class="fas fa-laptop-code"></i>
+                 <h3 class="counter">50+</h3>
+                 <p>Courses Offered</p>
+               </div>
+               <div class="stat-box">
+                 <i class="fas fa-certificate"></i>
+                 <h3 class="counter">1000+</h3>
+                 <p>Certifications</p>
+               </div>
+               <div class="stat-box">
+                 <i class="fas fa-handshake"></i>
+                 <h3 class="counter">100+</h3>
+                 <p>Partner Companies</p>
+               </div>
+             </div>
+           </div>
+         </section>
+
+
+<!-- Add before footer -->
+<section class="testimonial-slider" id="testimonials">
+  <div class="container">
+    <h2 class="main-title">What Our Students Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-slide">
+        <div class="testimonial-content">
+          <img src="img/1.jpg" alt="Student 1" class="testimonial-img">
+          <p class="testimonial-text">"The training at Simba Tech transformed my career. I'm now working as a full-stack developer."</p>
+          <h4 class="testimonial-author">John Doe</h4>
+          <p class="testimonial-position">Software Developer</p>
+        </div>
+      </div>
+      <!-- Add more testimonial slides as needed -->
+    </div>
+  </div>
+</section>
+<!-- Add this before the footer section -->
+<div class="contact" id="contact">
+  <h2 class="main-title">Contact Us</h2>
+  <div class="container">
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xldgzkev" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="Email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="Phone Number" placeholder="Your Phone">
+        </div>
+        <div class="form-group">
+          <input type="text" name="Course" placeholder="Course Interested in">
+        </div>
+        <div class="form-group">
+          <textarea name="Message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+              <!-- Start Footer -->
+               <div class="footer">
+                <div class="container">
+                  <div class="list-item">
+
+                    <div class="list">
+                      <h3>Article</h3>
+                      <ul>
+                        <li><a href="#article">Article</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                      </ul>
+                    </div>
+                    <div class="list">
+                      <h3>Services</h3>
+                      <ul>
+                        <li>
+                          <a href="#services">Services</a>
+                        </li>
+                        <li>
+                          <a href="#our-skills">Our Skills</a>
+                        </li>
+                        <li>
+                          <a href="#faqs"></i>FAQs</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="list">
+                      <h3>Events</h3>
+                      <ul>
+                        <li>
+                          <a href="#events">Events</a>
+                        </li>
+                        <li>
+                          <a href="#pricing">Pricing Plans</a>
+                        </li>
+                        <li>
+                          <a href="#discount">Request A Discount</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="list">
+                      <h3>Follow</h3>
+                      <ul class="media">
+                        <li>
+                          <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="copyright">
+                      <p> &copy; 2024 <b>Company Website</b> All Right Reseved</p>
+                  </div>
+                </div>
+               </div>
+              <!-- End Footer -->
+              <!-- Add this right before the closing body tag -->
+              <div id="enrollment-modal" class="modal">
+                <div class="modal-content">
+                  <span class="close-modal">&times;</span>
+                  <h2>Course Enrollment</h2>
+                  <form id="enrollment-form">
+                    <div class="form-group">
+                      <label for="course-input">Course</label>
+                      <input type="text" id="course-input" name="course" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="name-input">Name</label>
+                      <input type="text" id="name-input" name="name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="email-input">Email</label>
+                      <input type="email" id="email-input" name="email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone-input">Phone Number</label>
+                      <input type="tel" id="phone-input" name="phone" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Enrollment</button>
+                  </form>
+                </div>
+              </div>
+
+                           <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  const form = document.querySelector('.contact-form form');
+                
+                  form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                
+                    // Create a modal element
+                    const modal = document.createElement('div');
+                    modal.className = 'success-modal';
+                    modal.innerHTML = `
+                      <div class="modal-content">
+                        <h3>Success!</h3>
+                        <p>Your message has been sent successfully.</p>
+                        <button id="modal-close-btn">Close</button>
+                      </div>
+                    `;
+                
+                    // Add modal styles
+                    const modalStyle = document.createElement('style');
+                    modalStyle.textContent = `
+                      .success-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1000;
+                      }
+                      .modal-content {
+                        background-color: white;
+                        padding: 30px;
+                        border-radius: 5px;
+                        text-align: center;
+                        max-width: 400px;
+                      }
+                      #modal-close-btn {
+                        margin-top: 15px;
+                        padding: 8px 20px;
+                        background-color: #4CAF50;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                      }
+                    `;
+                    document.head.appendChild(modalStyle);
+ 
+ 
+ 
+ 
+ 
+                     // Submit form data using fetch
+                    fetch(form.getAttribute('action'), {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                          'Accept': 'application/json'
+                        }
+                      })
+                      .then(response => {
+                        if (response.ok) {
+                          // Add modal to the DOM
+                          document.body.appendChild(modal);
+                
+                          // Reset the form
+                          form.reset();
+                
+                          // Add event listener to close button
+                          document.getElementById('modal-close-btn').addEventListener('click', function() {
+                            // Redirect to WhatsApp group
+                            window.location.href = 'https://chat.whatsapp.com/F5V0QId4C3W5ndaymQDP6H';
+                          });
+                        } else {
+                          throw new Error('Form submission failed');
+                        }
+                      })
+                      .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting your form. Please try again.');
+                      });
+                  });
+                });
+                
+                
+    document.addEventListener('DOMContentLoaded', function() {
+  // Get all "Choose" buttons
+  const chooseButtons = document.querySelectorAll('.pricing .box a');
+  
+  // Add click event to each button
+  chooseButtons.forEach(button => {
+    if (button.getAttribute('href') === '#contact') {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the course title from the parent box
+        const courseBox = this.closest('.box');
+        const courseTitle = courseBox.querySelector('.titel').textContent;
+        
+        // Set the course title in the modal form
+        document.getElementById('course-input').value = courseTitle;
+        
+        // Show the modal
+        document.getElementById('enrollment-modal').style.display = 'flex';
+      });
+    }
+  });
+  
+  // Close modal when clicking on the close button
+  document.querySelector('.close-modal').addEventListener('click', function() {
+    document.getElementById('enrollment-modal').style.display = 'none';
+  });
+  
+  // Close modal when clicking outside of it
+  window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('enrollment-modal')) {
+      document.getElementById('enrollment-modal').style.display = 'none';
+    }
+  });
+  
+  // Handle form submission
+  document.getElementById('enrollment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    
+    // Submit form data using fetch
+    fetch('save_enrollment.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Enrollment submitted successfully! You will be redirected to our WhatsApp group.');
+        document.getElementById('enrollment-modal').style.display = 'none';
+        document.getElementById('enrollment-form').reset();
+        
+        // Redirect to WhatsApp group after successful submission
+        window.location.href = 'https://chat.whatsapp.com/F5V0QId4C3W5ndaymQDP6H';
+      } else {
+        alert('Error: ' + data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    });
+  });
+});            
+                
+                
+                
+                
+       
+              </script>
+      <script src="js/script.js"></script>
+      <script>
+      
+      
+      
+        document.addEventListener('DOMContentLoaded', function() {
+  // Intersection Observer for animation on scroll
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+  };
+
+  // Create observer for all animated elements
+  const observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  }, observerOptions);
+
+  // Observe gallery items
+  document.querySelectorAll('.gallery .box').forEach(item => {
+    observer.observe(item);
+  });
+
+  // Observe services boxes
+  document.querySelectorAll('.services .box').forEach(item => {
+    observer.observe(item);
+  });
+
+  // Observe feature cards
+  document.querySelectorAll('.feature-card').forEach(item => {
+    observer.observe(item);
+  });
+
+  // Observe stat boxes
+  document.querySelectorAll('.stat-box').forEach(item => {
+    observer.observe(item);
+  });
+
+  // Observe pricing boxes
+  document.querySelectorAll('.pricing .box').forEach(item => {
+    observer.observe(item);
+  });
+
+  // Animated counter for stats
+  const animateCounters = () => {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+      // Get target number from text content
+      const target = counter.textContent;
+      // Remove any non-numeric characters
+      const numericTarget = parseFloat(target.replace(/\D/g, ''));
+      // Check if it has a plus sign
+      const hasPlus = target.includes('+');
+      
+      // Start from zero
+      counter.textContent = '0';
+      
+      // Increment counter
+      const updateCounter = () => {
+        const currentValue = parseInt(counter.textContent);
+        const increment = Math.ceil(numericTarget / 25); // Adjust for animation speed
+        
+        if (currentValue < numericTarget) {
+          counter.textContent = currentValue + increment;
+          // Add plus sign back if it was there
+          if (hasPlus && currentValue + increment >= numericTarget) {
+            counter.textContent += '+';
+          }
+          setTimeout(updateCounter, 50);
+        } else {
+          // Make sure we land exactly on the target number
+          counter.textContent = hasPlus ? numericTarget + '+' : numericTarget;
+        }
+      };
+      
+      // Only start animation when element is visible
+      const statsSection = document.querySelector('#stats');
+      const statsSectionObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          updateCounter();
+          statsSectionObserver.unobserve(statsSection);
+        }
+      });
+      
+      statsSectionObserver.observe(statsSection);
+    });
+  };
+  
+  animateCounters();
+
+  // Animated typed text for hero section
+  const heroText = document.querySelector('.hero-content p');
+  if (heroText) {
+    const text = heroText.textContent;
+    heroText.textContent = '';
+    
+    let charIndex = 0;
+    function typeWriter() {
+      if (charIndex < text.length) {
+        heroText.textContent += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    
+    // Start typing animation after a delay
+    setTimeout(typeWriter, 1500);
+  }
+
+  // Testimonial slider animation
+  let testimonialIndex = 0;
+  const testimonials = document.querySelectorAll('.testimonial-slide');
+  
+  if (testimonials.length > 1) {
+    function showNextTestimonial() {
+      testimonials.forEach(slide => {
+        slide.style.display = 'none';
+        slide.style.opacity = '0';
+      });
+      
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+      testimonials[testimonialIndex].style.display = 'block';
+      
+      // Trigger fade in animation
+      setTimeout(() => {
+        testimonials[testimonialIndex].style.opacity = '1';
+      }, 100);
+    }
+    
+    // Initialize first testimonial
+    testimonials[0].style.display = 'block';
+    setTimeout(() => {
+      testimonials[0].style.opacity = '1';
+    }, 100);
+    
+    // Change testimonial every 5 seconds
+    setInterval(showNextTestimonial, 5000);
+  }
+
+  // Landing slider enhanced animations
+  const sliderItems = document.querySelectorAll('.landing .slider .item');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  
+  if (sliderItems.length > 0 && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    
+    // Show current slide with animation
+    function showSlide(index) {
+      // Hide all slides
+      sliderItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.display = 'none';
+      });
+      
+      // Show current slide
+      sliderItems[index].style.display = 'flex';
+      
+      // Trigger animations
+      setTimeout(() => {
+        sliderItems[index].style.opacity = '1';
+        
+        // Animate text elements
+        const heading = sliderItems[index].querySelector('h1');
+        const paragraph = sliderItems[index].querySelector('p');
+        
+        if (heading) {
+          heading.style.transform = 'translateY(30px)';
+          heading.style.opacity = '0';
+          
+          setTimeout(() => {
+            heading.style.transition = 'all 0.8s ease-out';
+            heading.style.transform = 'translateY(0)';
+            heading.style.opacity = '1';
+          }, 300);
+        }
+        
+        if (paragraph) {
+          paragraph.style.transform = 'translateY(30px)';
+          paragraph.style.opacity = '0';
+          
+          setTimeout(() => {
+            paragraph.style.transition = 'all 0.8s ease-out';
+            paragraph.style.transform = 'translateY(0)';
+            paragraph.style.opacity = '1';
+          }, 600);
+        }
+      }, 100);
+    }
+    
+    // Initialize first slide
+    showSlide(currentIndex);
+    
+    // Next slide
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % sliderItems.length;
+      showSlide(currentIndex);
+    });
+    
+    // Previous slide
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+      showSlide(currentIndex);
+    });
+    
+    // Auto-advance slides every 7 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % sliderItems.length;
+      showSlide(currentIndex);
+    }, 7000);
+  }
+
+  // Animated background gradient for the header
+  const header = document.querySelector('.header');
+  if (header) {
+    let hue = 0;
+    
+    function updateGradient() {
+      hue = (hue + 1) % 360;
+      const color1 = `hsla(${hue}, 100%, 50%, 0.05)`;
+      const color2 = `hsla(${(hue + 180) % 360}, 100%, 50%, 0.05)`;
+      
+      header.style.background = `linear-gradient(45deg, ${color1}, ${color2})`;
+      requestAnimationFrame(updateGradient);
+    }
+    
+    // Only update on hover to save performance
+    header.addEventListener('mouseenter', () => {
+      requestAnimationFrame(updateGradient);
+    });
+    
+    header.addEventListener('mouseleave', () => {
+      header.style.background = '';
+    });
+  }
+
+  // Scroll to section with smooth animation
+  const navLinks = document.querySelectorAll('.main-nav a, .cta-button');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Only process internal links
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 70, // Adjust for fixed header
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+
+  // Particle animation for hero section
+  const heroSection = document.querySelector('.hero-section');
+  
+  if (heroSection) {
+    // Create particle container
+    const particleContainer = document.createElement('div');
+    particleContainer.className = 'particle-container';
+    particleContainer.style.position = 'absolute';
+    particleContainer.style.top = '0';
+    particleContainer.style.left = '0';
+    particleContainer.style.width = '100%';
+    particleContainer.style.height = '100%';
+    particleContainer.style.overflow = 'hidden';
+    particleContainer.style.pointerEvents = 'none';
+    particleContainer.style.zIndex = '1';
+    
+    heroSection.insertBefore(particleContainer, heroSection.firstChild);
+    
+    // Create particles
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.position = 'absolute';
+      particle.style.width = Math.random() * 5 + 'px';
+      particle.style.height = particle.style.width;
+      particle.style.background = 'rgba(255, 255, 255, 0.5)';
+      particle.style.borderRadius = '50%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+      particle.style.opacity = Math.random() * 0.5;
+      
+      particleContainer.appendChild(particle);
+    }
+    
+    // Add float animation
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-100px) translateX(${Math.random() * 100 - 50}px);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+  }
+  
+  // Initialize scroll-up button
+  const scrollUpBtn = document.getElementById('scroll-up');
+  
+  if (scrollUpBtn) {
+    // Show/hide based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollUpBtn.style.display = 'block';
+        scrollUpBtn.style.opacity = '1';
+      } else {
+        scrollUpBtn.style.opacity = '0';
+        setTimeout(() => {
+          if (window.scrollY <= 500) {
+            scrollUpBtn.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+  }
+  
+  // Custom cursor effect for interactive elements
+  const customCursor = document.createElement('div');
+  customCursor.className = 'custom-cursor';
+  customCursor.style.position = 'fixed';
+  customCursor.style.width = '40px';
+  customCursor.style.height = '40px';
+  customCursor.style.borderRadius = '50%';
+  customCursor.style.border = '2px solid var(--main-color)';
+  customCursor.style.pointerEvents = 'none';
+  customCursor.style.transform = 'translate(-50%, -50%)';
+  customCursor.style.zIndex = '9999';
+  customCursor.style.opacity = '0';
+  customCursor.style.transition = 'width 0.3s, height 0.3s, opacity 0.3s';
+  
+  //document.body.appendChild(customCursor);
+  
+  // Interactive elements to track
+  const interactiveElements = document.querySelectorAll('a, button, .box, .feature-card');
+  
+  document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = e.clientX + 'px';
+    customCursor.style.top = e.clientY + 'px';
+  });
+  
+  interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      customCursor.style.opacity = '1';
+      customCursor.style.width = '50px';
+      customCursor.style.height = '50px';
+      customCursor.style.backgroundColor = 'rgba(var(--main-color-rgb), 0.1)';
+      element.style.cursor = 'none';
+    });
+    
+    element.addEventListener('mouseleave', () => {
+      customCursor.style.opacity = '0';
+      customCursor.style.width = '40px';
+      customCursor.style.height = '40px';
+      customCursor.style.backgroundColor = 'transparent';
+      element.style.cursor = 'auto';
+    });
+  });
+  
+  // Add a parallax effect to the hero section
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    
+    if (heroSection) {
+      heroSection.style.backgroundPositionY = -scrollPosition * 0.2 + 'px';
+    }
+  });
+});
+
+// Function for the scroll-up button
+function topScroll() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            
+            // Auto slide functionality
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // Function to change slide
+            function changeSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                
+                currentSlide = (n + slides.length) % slides.length;
+                
+                slides[currentSlide].classList.remove('fade-in');
+                void slides[currentSlide].offsetWidth; // Trigger reflow
+                slides[currentSlide].classList.add('active', 'fade-in');
+                dots[currentSlide].classList.add('active');
+                
+                // Reset interval timer
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // Next slide function
+            function nextSlide() {
+                changeSlide(currentSlide + 1);
+            }
+            
+            // Add click event to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    changeSlide(index);
+                });
+            });
+            
+            // Add swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            const sliderContainer = document.querySelector('.slider-container');
+            
+            sliderContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            sliderContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - next slide
+                    changeSlide(currentSlide + 1);
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - previous slide
+                    changeSlide(currentSlide - 1);
+                }
+            }
+            
+            // Pause slider on hover
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+
+      </script>
+           <script src="js/script.js"></script>         
